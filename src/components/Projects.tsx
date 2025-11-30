@@ -1,10 +1,14 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Image, { StaticImageData } from 'next/image'
+
+import conectaSusa from '../assets/projects/conecta-susa.png'
+import timesheetApp from '../assets/projects/timesheet-app.png'
 
 interface Project {
   title: string
   description: string
-  image: string
+  image: string | StaticImageData
   tags: string[]
   github?: string
   live?: string
@@ -17,25 +21,26 @@ export const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: 'Projeto Destaque 1',
+      title: 'Timesheet WebApp',
       description:
-        'Uma aplicação web completa desenvolvida com React, TypeScript e Node.js. Implementa autenticação, gerenciamento de estado avançado e integração com APIs RESTful. O projeto demonstra práticas modernas de desenvolvimento e arquitetura escalável.',
-      image:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
-      tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-      github: 'https://github.com',
-      live: 'https://example.com',
+        'Uma aplicação web desenvolvida com foco em produtividade e controle de ponto. Permite o registro de horários de entrada, saída e almoço, além de exibir a diferença entre as horas trabalhadas e a carga horária esperada no dia. O projeto aplica boas práticas de desenvolvimento frontend, priorizando experiência do usuário, organização de código e componentização.',
+      // image:
+      //   'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+      image: timesheetApp,
+      tags: ['React', 'TypeScript', 'Material UI', 'Firebase'],
+      live: 'https://italofsan-timesheet.netlify.app/',
       featured: true,
     },
     {
-      title: 'Projeto Destaque 2',
+      title: 'Conecta SUSA',
       description:
-        'Aplicativo mobile multiplataforma criado com React Native e Expo. Inclui navegação complexa, animações fluidas, integração com câmera e geolocalização. Focado em performance e experiência do usuário.',
-      image:
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop',
-      tags: ['React Native', 'Expo', 'Firebase', 'Redux'],
-      github: 'https://github.com',
-      live: 'https://example.com',
+        'Uma aplicação web voltada para o gerenciamento e acompanhamento de animais. Permite o cadastro completo de pets e o monitoramento de vacinas, histórico de consultas e doenças. O projeto demonstra boa arquitetura de componentes, organização de estados e experiência de uso fluida e intuitiva.',
+      // image:
+      //   'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=500&fit=crop',
+      image: conectaSusa,
+      tags: ['React', 'TypeScript', 'Material UI'],
+      github: 'https://github.com/italofsan/conecta-susa',
+      live: 'https://conectasusa.netlify.app',
       featured: true,
     },
     {
@@ -72,8 +77,8 @@ export const Projects = () => {
     },
   ]
 
-  const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  const featuredProjects = projects.filter((project) => project.featured)
+  const otherProjects = projects.filter((project) => !project.featured)
 
   return (
     <section
@@ -115,7 +120,7 @@ export const Projects = () => {
                 index % 2 === 1 ? 'ltr' : ''
               }`}
             >
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className='w-full h-full object-cover grayscale brightness-[0.7] transition-all duration-300 group-hover:grayscale-0 group-hover:brightness-100'
@@ -212,9 +217,11 @@ export const Projects = () => {
             transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
           >
             <div className='w-full h-[200px] rounded-lg overflow-hidden mb-sm'>
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={400}
+                height={300}
                 className='w-full h-full object-cover'
               />
             </div>
