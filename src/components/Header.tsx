@@ -17,7 +17,7 @@ export const Header = () => {
     >
       <nav className='max-w-[1200px] mx-auto flex justify-between items-center'>
         <motion.div
-          className='text-2xl font-bold text-accent cursor-pointer'
+          className='text-2xl font-bold text-accent cursor-pointer select-none'
           whileHover={{ scale: 1.05 }}
           onClick={() => scrollToSection('home')}
         >
