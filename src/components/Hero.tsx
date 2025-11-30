@@ -40,7 +40,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Seu Nome.
+          Ítalo Santos.
         </motion.h1>
         <motion.h2
           className='text-3xl md:text-3xl sm:text-2xl text-textSecondary mb-md'
@@ -57,8 +57,8 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           Especializado em criar experiências digitais excepcionais. Atualmente
-          focado em desenvolver aplicações web e mobile acessíveis e centradas
-          no usuário.
+          focado em desenvolver aplicações web e mobile acessíveis e focadas no
+          usuário.
         </motion.p>
         <motion.button
           className='py-sm px-lg text-lg font-semibold text-accent bg-transparent border-2 border-accent rounded cursor-pointer transition-all duration-300 hover:bg-accent/10 hover:-translate-y-0.5 hover:shadow-accent'

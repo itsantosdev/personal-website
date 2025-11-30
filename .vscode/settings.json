@@ -1,0 +1,20 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["className\\s*[:=]\\s*['\"`]([^'\"`]*)['\"`]", "([^'\"`]*)"]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.validate": true,
+  "css.validate": false,
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**"
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}

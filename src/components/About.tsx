@@ -1,5 +1,8 @@
 import { useRef } from 'react'
+import Image from 'next/image'
 import { useInView, motion } from 'framer-motion'
+
+import myPhoto from '../assets/my-photo.jpg'
 
 export const About = () => {
   const ref = useRef(null)
@@ -7,11 +10,11 @@ export const About = () => {
 
   const technologies = [
     'React',
-    'TypeScript',
     'React Native',
+    'TypeScript',
     'Next.js',
-    'Node.js',
-    'GraphQL',
+    'JavaScript',
+    'React Query',
   ]
 
   return (
@@ -38,13 +41,13 @@ export const About = () => {
           <p className='text-lg text-textSecondary leading-[1.8]'>
             Olá! Sou um desenvolvedor frontend apaixonado por criar experiências
             digitais que fazem a diferença. Minha jornada no desenvolvimento web
-            começou há alguns anos e desde então tenho me dedicado a construir
+            começou há seis anos e desde então tenho me dedicado a construir
             aplicações que são não apenas bonitas, mas também funcionais e
             acessíveis.
           </p>
           <p className='text-lg text-textSecondary leading-[1.8]'>
             Trabalho tanto com desenvolvimento web quanto mobile, sempre
-            buscando as melhores práticas e tecnologias mais modernas. Acredito
+            aplicando as melhores práticas e tecnologias mais modernas. Acredito
             que o código limpo e a atenção aos detalhes são fundamentais para
             criar produtos de qualidade.
           </p>
@@ -69,8 +72,8 @@ export const About = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="relative rounded-lg overflow-hidden after:content-[''] after:absolute after:top-0 after:left-0 after:right-0 after:bottom-0 after:bg-accent after:opacity-30 after:transition-opacity after:duration-300 group-hover:after:opacity-0">
-            <img
-              src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
+            <Image
+              src={myPhoto}
               alt='Profile'
               className='w-full h-auto block rounded-lg'
             />

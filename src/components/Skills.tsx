@@ -25,10 +25,11 @@ export const Skills = () => {
       skills: [
         { name: 'React', level: 'expert' },
         { name: 'TypeScript', level: 'expert' },
-        { name: 'Next.js', level: 'advanced' },
-        { name: 'HTML/CSS', level: 'expert' },
+        { name: 'Next.js', level: 'intermediate' },
         { name: 'JavaScript', level: 'expert' },
-        { name: 'Tailwind CSS', level: 'advanced' },
+        { name: 'HTML/CSS', level: 'expert' },
+        { name: 'Tailwind CSS', level: 'intermediate' },
+        { name: 'Emotion', level: 'advanced' },
       ],
     },
     {
@@ -39,19 +40,19 @@ export const Skills = () => {
         { name: 'Expo', level: 'advanced' },
         { name: 'iOS', level: 'advanced' },
         { name: 'Android', level: 'advanced' },
-        { name: 'Mobile UI/UX', level: 'advanced' },
+        { name: 'Styled Components', level: 'advanced' },
       ],
     },
     {
-      title: 'Backend & Tools',
+      title: 'Tools',
       icon: '⚙️',
       skills: [
-        { name: 'Node.js', level: 'advanced' },
-        { name: 'Git', level: 'expert' },
-        { name: 'REST APIs', level: 'advanced' },
-        { name: 'GraphQL', level: 'intermediate' },
-        { name: 'PostgreSQL', level: 'intermediate' },
-        { name: 'Docker', level: 'intermediate' },
+        { name: 'React Query', level: 'advanced' },
+        { name: 'Redux', level: 'advanced' },
+        { name: 'MobX', level: 'advanced' },
+        { name: 'React Hook Form', level: 'advanced' },
+        { name: 'Git', level: 'advanced' },
+        { name: 'Integração com APIs', level: 'advanced' },
       ],
     },
   ]
@@ -101,7 +102,7 @@ export const Skills = () => {
         {skillCategories.map((category, categoryIndex) => (
           <motion.div
             key={categoryIndex}
-            className='bg-secondary p-lg rounded-lg border border-accent/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-accent-lg'
+            className='bg-secondary p-md rounded-lg border border-accent/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-accent-lg'
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
@@ -110,7 +111,7 @@ export const Skills = () => {
               <span>{category.icon}</span>
               {category.title}
             </h3>
-            <div className='flex flex-wrap gap-sm'>
+            <div className='flex flex-col gap-sm items-start'>
               {category.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
