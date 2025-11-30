@@ -25,7 +25,7 @@ export const Hero = () => {
           ease: 'easeInOut',
         }}
       />
-      <div className='max-w-[900px] z-10'>
+      <div className='max-w-[900px]'>
         <motion.p
           className='text-accent text-lg font-medium mb-sm'
           initial={{ opacity: 0, y: 20 }}
