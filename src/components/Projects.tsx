@@ -199,49 +199,55 @@ export const Projects = () => {
       </div>
 
       {/* Other Projects */}
-      <motion.h3
-        className='text-3xl font-bold mb-lg'
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        Outros Projetos
-      </motion.h3>
-      <div className='grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-lg'>
-        {otherProjects.map((project, index) => (
-          <motion.div
-            key={index}
-            className='bg-secondary p-lg rounded-lg border border-accent/10 flex flex-col gap-md transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-accent-lg'
-            initial={{ opacity: 0, y: 50 }}
+      {otherProjects.length > 0 ? (
+        <>
+          <motion.h3
+            className='text-3xl font-bold mb-lg'
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <div className='w-full h-[200px] rounded-lg overflow-hidden mb-sm'>
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={300}
-                className='w-full h-full object-cover'
-              />
-            </div>
-            <h4 className='text-xl font-semibold text-text'>{project.title}</h4>
-            <p className='text-textSecondary text-sm leading-[1.6] flex-1'>
-              {project.description}
-            </p>
-            <ul className='flex flex-wrap gap-xs list-none mt-auto'>
-              {project.tags.map((tag, tagIndex) => (
-                <li
-                  key={tagIndex}
-                  className='text-textSecondary text-xs font-mono'
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </div>
+            Outros Projetos
+          </motion.h3>
+          <div className='grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-lg'>
+            {otherProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                className='bg-secondary p-lg rounded-lg border border-accent/10 flex flex-col gap-md transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-accent-lg'
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+              >
+                <div className='w-full h-[200px] rounded-lg overflow-hidden mb-sm'>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={300}
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+                <h4 className='text-xl font-semibold text-text'>
+                  {project.title}
+                </h4>
+                <p className='text-textSecondary text-sm leading-[1.6] flex-1'>
+                  {project.description}
+                </p>
+                <ul className='flex flex-wrap gap-xs list-none mt-auto'>
+                  {project.tags.map((tag, tagIndex) => (
+                    <li
+                      key={tagIndex}
+                      className='text-textSecondary text-xs font-mono'
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </>
+      ) : null}
     </section>
   )
 }
